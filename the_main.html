@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<header>
+
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</header>
+<style>
+#fixedFooter {
+    position: fixed;
+    bottom:  0;
+    width: 100%;
+    background-color: #000000; /* Change the background color as needed */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center align items */
+}
+
+.left-column {
+    display: flex;
+    align-items:flex-start; /* Vertically center align items */
+}
+
+.left-column img {
+    margin-right: 100px; /* Adjust margin as needed */
+    width: 65px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.center-column {
+    /* Optional: Add styling for the center column */
+}
+
+</style>
+
+<body style="width: 100%;">
+
+<!-- <noscript>
+        <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbwx3XhETH5o-GHME-x8OhMg1Rlqgb7UjHa4TBcQC-rzBvYoRWcIkyl4YdEC1fEvTO-fTA/exec">
+        If you are not redirected automatically, follow this <a href="https://script.google.com/macros/s/AKfycbwx3XhETH5o-GHME-x8OhMg1Rlqgb7UjHa4TBcQC-rzBvYoRWcIkyl4YdEC1fEvTO-fTA/exec">link to the page</a>.
+    </noscript> -->
+
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top position-fixed ">
+        <div class="container-fluid nav" id="navbarContainer">
+            <a class="navbar-brand " href="#">
+                <!-- <img class="image" src="flag.65a505a5616b94740bd2.png" alt="" width="500" height="500" style="object-fit: cover;"> -->
+                <img class="image" src="images/571c1b23-1c97-497e-a852-10a3d6488f70.jpg" alt="" width="50" height="39">Dopamine Store
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="the_main.html">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sales.html">Goods</a>
+                    </li>
+
+                </ul>
+                
+
+                <div class="row"> <!-- Create a row to contain the buttons -->
+                    <div class="col-sm-6 col-lg-6 btnnd"> <!-- Divide the row into columns to hold each button -->
+                        <button class="btn btn-primary m-1 btnn" type="button" data-bs-toggle="offcanvas"   
+                            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">OUR_GROUPS</button> 
+                    </div>
+                    
+                    <div class="col-sm-6 col-lg-6 btnnd"> <!-- Repeat for each button -->
+                        <button class="btn btn-primary m-1 btnn" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasWithBothOptions_contact" aria-controls="offcanvasWithBothOptions">Contacts</button> 
+                            <div class="background-left"></div>
+
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </nav>
+
+   
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions_contact" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Fell Free to chat us</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div> 
+            <a class="smedia" href="https://api.whatsapp.com/send/?phone=%2B201017284396&text&type=phone_number&app_absent=0">
+                <p class="iconn text-success"><i class="fa-brands fa-whatsapp"></i><span class="titlemedia">Hasnaa</span></p>
+            </a>    
+
+        </div>
+    </div>
+    
+    <!-- off canvas -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Feel free to follow these links</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <div class="offcanvas-body">
+
+            <a class="smedia" href="https://chat.whatsapp.com/KI1Et4F5S7Y3iGY5t14lRe">
+                <p class="iconn text-success"><i class="fa-brands fa-whatsapp"></i><span
+                        class="titlemedia">whatsapp</span></p>
+            </a>
+
+            <a class="smedia" href="https://t.me/+oqML7Ks689E0ODlk">
+                <p class="iconn text-danger"><i class="fa-brands fa-telegram"></i><span class="titlemedia">Telegram</span>
+                </p>
+            </a>
+
+            <a class="smedia" href="https://youtube.com/@ahmedmohie36">
+                <p class="iconn text-info-emphasis"><i class="fa-brands fa-youtube"></i><span
+                        class="titlemedia">YouTube</span></p>
+            </a>
+
+            <a class="smedia" href="https://www.tiktok.com/@ahmed_mohie7?_t=8eQinzl24Qg&_r=1">
+                <p class="iconn text-warning-emphasis"><i class="fa-brands fa-tiktok"></i><span
+                        class="titlemedia">TikTok</span></p>
+            </a>
+
+            <a class="smedia" href="https://www.facebook.com/share/bSLEp1NgJwAc4Wbd/?mibextid=K35XfP">
+                <p class="iconn fst"><i class="fa-brands fa-facebook"></i><span class="titlemedia">Facebook </span></p>
+            </a>
+
+            <a class="smedia" href="https://www.facebook.com/profile.php?id=100086168628540&mibextid=LQQJ4d">
+                <p class="iconn fst"><i class="fa-brands fa-facebook"></i><span class="titlemedia">Facebook </span></p>
+            </a>
+
+            <a class="smedia" href="https://instagram.com/ahmedmohie97?igshid=OGQ5ZDc2ODk2ZA==">
+                <p class="iconn fst"><i class="fa-brands fa-instagram"></i><span class="titlemedia">Instagram </span></p>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- carousel -->
+
+    <div class=" containere">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators  ">
+               
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/571c1b23-1c97-497e-a852-10a3d6488f70.jpg" class="d-block w-100 cimg">
+                </div>
+                 
+                <!-- Additional carousel items -->
+                 
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="separator"></div>
+    <div class="ussep"></div>
+
+
+
+
+    <!-- cards -->
+    <div class="ussep">
+        <div class="h2d">
+            <h2>Our Top Sales</h2>
+        </div>
+    </div>
+
+    <div class="container cardsCont m-auto mb-5 ">
+        <div class="row col-12 justify-content-around m-auto gap-5">
+
+              
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-pixabay-301367.jpg" class="card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+                
+
+            </div>
+            <!-- ----------------------------------------------------------------------------------   -->
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-828860-2517447.jpg" class="card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+
+            </div>
+
+            <!-- ----------------------------------------------------------------------------------   -->
+
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-laurachouette-21308550.jpg" class=" card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+
+            </div>
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-pixabay-301367.jpg" class="card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+                
+
+            </div>
+            <!-- ----------------------------------------------------------------------------------   -->
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-828860-2517447.jpg" class="card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+
+            </div>
+
+            <!-- ----------------------------------------------------------------------------------   -->
+
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-laurachouette-21308550.jpg" class=" card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-pixabay-301367.jpg" class="card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+                
+
+            </div>
+            <!-- ----------------------------------------------------------------------------------   -->
+
+            <div class="card col-lg-4 col-md-6 col-sm-12 cardEdit" style="width: 18rem;">
+                <div class="cardEditText">
+                    <img src="images/pexels-828860-2517447.jpg" class="card-img-top" alt=""><span style="color:#000000; font-size: larger;">any_thing</span>
+                </div>
+
+                <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary"><s>399$</s> 299$</a>
+                </div>
+
+            </div>
+
+            <!-- ----------------------------------------------------------------------------------   -->
+        </div>
+    </div>
+
+    <div class="separator2"></div> 
+
+    <!-- news -->
+
+    <div class="space"></div>
+    
+    <div class="space"></div>
+       
+        <div class="space" style="height: 100px;"></div>    
+
+
+        <div class="space"></div>
+
+
+        <footer class="bg-dark text-light foot">
+            <div class="containere py-4 p-4">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 text-center ">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Home</a></li>
+                            <li><a href="sales.html" class="text-light">Sales</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 text-center">
+                        <h5>Connect With Us</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#" class="text-light"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="text-center py-3">
+            </div>
+        </footer>
+
+        
+
+<!-- script bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous">
+        </script>
+
+<script>
+    document.getElementById("clickable-div").addEventListener("click", function() {
+        window.location.href = "https://api.whatsapp.com/send/?phone=%2B201004395090&text&type=phone_number&app_absent=0";
+    });
+</script>
+        
+</body>
+</html>
