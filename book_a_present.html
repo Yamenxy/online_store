@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dopamine Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        }
+
+        .main {
+            width: 350px;
+            height: auto;
+            background: url("https://img.freepik.com/free-photo/blush-lilac-makeup-brushes-straw-hat-are-located-isolated-pink_197531-10745.jpg?t=st=1719700033~exp=1719703633~hmac=26ad60fdd16b15026aeced0dd76e51849d1639ec7604a9348ab16a76435441f2&w=1060") no-repeat center/cover;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10000px #000;
+        }
+
+        #chk {
+            display: none;
+        }
+
+        .signup {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        label {
+            color: #fff;
+            font-size: 2.3em;
+            justify-content: center;
+            display: flex;
+            margin: 0.1px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+
+        input {
+            width: 70%;
+            height: 25px;
+            background: #c9c7c7;
+            justify-content: center;
+            display: flex;
+            margin: 20px auto;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 75%;
+            height: 40px;
+            background: #c9c7c7;
+            justify-content: center;
+            display: flex;
+            margin: 0px auto;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 60%;
+            height: 40px;
+            margin: 10px auto;
+            justify-content: center;
+            display: block;
+            color: #fff;
+            background: #573b8a;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 20px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6d44b8;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            z-index: 9999; /* Ensure it's above other elements */
+            display: none; /* Initially hidden */
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(https://mrwallpaper.com/images/high/makeup-basic-set-0llaq8kwq6oa4xd8.webp);
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .firefly {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 0.4vw;
+            height: 0.4vw;
+            margin: -0.2vw 0 0 9.8vw;
+            animation: ease 200s alternate infinite;
+            pointer-events: none;
+        }
+
+        .firefly::before,
+        .firefly::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform-origin: -10vw;
+        }
+
+        .firefly::before {
+            background: black;
+            opacity: 0.4;
+            animation: drift ease alternate infinite;
+        }
+
+        .firefly::after {
+            background: white;
+            opacity: 0;
+            box-shadow: 0 0 0vw 0vw yellow;
+            animation: drift ease alternate infinite, flash ease infinite;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes flash {
+            0%, 30%, 100% {
+                opacity: 0;
+                box-shadow: 0 0 0vw 0vw yellow;
+            }
+            5% {
+                opacity: 1;
+                box-shadow: 0 0 2vw 0.4vw yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="contact-form" onsubmit="return false;">
+            <div class="main">
+                <input type="checkbox" id="chk" aria-hidden="true">
+                <div class="signup">
+                    <label for="chk" aria-hidden="true" style="font-size: large;">Dopamine Store</label>
+                    <input type="text" name="Name" placeholder="Name" required>
+                    <input type="text" name="phone_number" placeholder="phone_number" required>
+                    <br>
+                    <select name="Product Name" required>
+                        <option value="" placeholder="" style="">Choose Product Name</option>
+                        <option value="Product 1">Product 1</option>
+                        <option value="Product 2">Product 2</option>
+                        <option value="Product 3">Product 3</option>
+                    </select>
+                    <input type="hidden" name="code" id="unique_code">
+                    <br><br><br>
+                    <button type="submit" id="submit">Send</button>
+                </div>
+                <div class="overlay" id="overlay"></div>
+                <div id="loadingOverlay" style="display: none;">
+                    <div id="loadingBox" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px; text-align: center;">
+                        <p>Sending Your Data Please Wait to take the code...</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzTP0Ewti48wtIRehc1ZtrU-8UPvGRXut3m-Kiw1UwYXBg7vEj46emzv6HqtVy4mODA/exec';
+        const form = document.getElementById('contact-form');
+        const loadingBox = document.getElementById('loadingBox');
+
+        function generateUniqueCode() {
+            const characters = '0123456789';
+            let code = '';
+            for (let i = 0; i < 8; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                code += characters.charAt(randomIndex);
+            }
+            return code;
+        }
+
+        form.addEventListener('submit', (e) => {e.preventDefault();
+            document.getElementById('unique_code').value = generateUniqueCode();
+            document.getElementById('overlay').style.display = 'block';
+            loadingBox.style.display = 'block';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('overlay').style.display = 'none';
+                    loadingBox.style.display = 'none';
+
+                    if (data.result === 'success') {
+                        alert(`Data submitted successfully! Your unique code is: ${data.code}`);
+                    } else {
+                        alert(`Error: ${data.message}`);
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('overlay').style.display = 'none';
+                    loadingBox.style.display = 'none';
+                    alert('An error occurred. Please try again.');
+                    console.error('Error!', error.message);
+                });
+        });
+    </script>
+</body>
+</html>
+
